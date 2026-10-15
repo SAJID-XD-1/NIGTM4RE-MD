@@ -1,0 +1,112 @@
+{
+  "name": "Levanter",
+  "description": "",
+  "keywords": ["nodejs"],
+  "repository": "https://github.com/ayazaliofc/deploy-levanter",
+  "success_url": "/",
+  "stack": "container",
+  "env": {
+    "ALWAYS_ONLINE": {
+      "description": "show bot number last seen as online",
+      "required": false,
+      "value": "false"
+    },
+    "SUDO": {
+      "description": "admin",
+      "required": false,
+      "value": ""
+    },
+    "PREFIX": {
+      "description": "prefix, check for more",
+      "required": false,
+      "value": "."
+    },
+    "SESSION_ID": {
+      "description": "session id",
+      "required": true,
+      "value": ""
+    },
+    "STICKER_PACKNAME": {
+      "description": "sticker pack info",
+      "required": false,
+      "value": ",𝐙ᴀᴇ꧊ɪx 🤍🪻"
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Heroku app name, same as above entered.",
+      "required": true,
+      "value": ""
+    },
+    "HEROKU_API_KEY": {
+      "description": "Heroku account api key, https://dashboard.heroku.com/account",
+      "required": true,
+      "value": ""
+    },
+    "WARN_LIMIT": {
+      "description": "Maximum number of warnings to a person.",
+      "required": false,
+      "value": "3"
+    },
+    "FORCE_LOGOUT": {
+      "description": "In some scenario have to logout web, Only such case make this true and back to false after logout.",
+      "required": false,
+      "value": "false"
+    },
+    "ANTILINK_MSG": {
+      "description": "Message send when antilink and action is kick.",
+      "required": false,
+      "value": "_Antilink Detected &mention kicked_"
+    },
+    "ANTISPAM_MSG": {
+      "description": "Message send when antispam.",
+      "required": false,
+      "value": "_Antispam Detected &mention kicked_"
+    },
+    "ANTIWORDS_MSG": {
+      "description": "Message send when antiword.",
+      "required": false,
+      "value": "_Antiword Detected &mention kicked_"
+    },
+    "ANTIWORDS": {
+      "description": "words that not allowed in chats.",
+      "required": false,
+      "value": "word1,word2,word3"
+    },
+    "BOT_LANG": {
+      "description": "Bot language",
+      "required": false,
+      "value": "en"
+    },
+    "REJECT_CALL": {
+      "description": "auto reject call, if set as true",
+      "required": false,
+      "value": "false"
+    },
+    "AUTO_STATUS_VIEW": {
+      "description": "view others status",
+      "required": false,
+      "value": "false"
+    },
+    "SEND_READ": {
+      "description": "send blue tick",
+      "required": false,
+      "value": "false"
+    },
+    "DISABLE_START_MESSAGE": {
+      "description": "Disable start Message",
+      "required": false,
+      "value": "false"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:essential-0"
+    }
+  ],
+  "buildpacks": [],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
