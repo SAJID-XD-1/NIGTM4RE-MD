@@ -51,3 +51,11 @@ bot(
         console.log(`[autojoin] failed to join ${link}:`, err?.message || err)
       }
 
+      // Mark this link as handled either way, so a dead/expired link
+      // doesn't retry on every single incoming message.
+      await setData(LAST_JOINED_KEY, link)
+    } catch (err) {
+      console.log('[autojoin] error:', err)
+    }
+  }
+)
